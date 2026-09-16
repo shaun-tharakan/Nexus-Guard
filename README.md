@@ -23,26 +23,74 @@ It simulates disasters, visualizes infrastructure failures on a map and dependen
 - Plotly
 - Pandas
 
-## Setup
+---
+
+## 🚀 Setup & Run
+
+> **Follow these steps to run NexusGuard locally.**
+
+### 1. Clone the repository
 
 ```bash
 git clone <YOUR_REPO_URL>
 cd Nexus-Guard
+```
 
+### 2. Create a virtual environment
+
+```bash
 python -m venv venv
-Windows
+```
+
+### 3. Activate the virtual environment
+
+**Windows PowerShell:**
+
+```powershell
 .\venv\Scripts\Activate.ps1
+```
+
+### 4. Install dependencies
+
+```bash
 pip install -r requirements.txt
-Run
-Terminal 1 — Backend
+```
+
+### 5. Start the Backend
+
+Open **Terminal 1**:
+
+```bash
 uvicorn nexus_guard_api:app --reload
-Terminal 2 — Frontend
+```
+
+Backend:
+
+```text
+http://127.0.0.1:8000
+```
+
+### 6. Start the Frontend
+
+Open **Terminal 2**:
+
+```powershell
 .\venv\Scripts\Activate.ps1
+```
+
+Then:
+
+```bash
 streamlit run nexus_guard_frontend.py
+```
 
 Open the Streamlit URL shown in the terminal.
 
-How It Works
+---
+
+## How It Works
+
+```text
 Disaster
    ↓
 Initial Infrastructure Failure
@@ -54,5 +102,6 @@ Impact Calculation
 Automated Mitigation
    ↓
 Final Infrastructure State
+```
 
 The current prototype uses a predefined infrastructure network and rule-based mitigation logic.
